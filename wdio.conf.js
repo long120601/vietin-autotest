@@ -3,7 +3,7 @@ export const config = {
     runner: 'local',
     specs: [
         // 'quanlyduan/**/*.js'
-       'quanlyduan/CreateProject.js'
+       'quanlychinhanh/themmoidemo.js'
     ],
    
     exclude: [

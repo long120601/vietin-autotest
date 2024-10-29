@@ -1,8 +1,8 @@
-import { browser, expect, $, $$ } from "@wdio/globals";
+import { browser, $, $$ } from "@wdio/globals";
 describe('login tests', () => {
     let username, password, login;
     before(async () => {
-        await browser.url('http://192.168.0.163:3232/auth/login');
+        await browser.url('https://tm-demo-ad.mobiplus.vn/auth/login');
         username = await $('input[name="username"]');
         password = await $('input[name="password"]');
         login = await $('button[class="Button_container__By3IT"]');
@@ -13,12 +13,13 @@ describe('login tests', () => {
     });
 
     it('truecreate', async () => {
-        await browser.url('http://192.168.0.163:3232/branch?action=create')
+        await browser.url('https://tm-demo-ad.mobiplus.vn/branch?action=create')
         const randomValue = Math.random().toString(36).substring(7);
         const tenchinhanh = await $('Input[placeholder="Nhập tên chi nhánh"]')
         await tenchinhanh.setValue(randomValue)
 
         const diachi = await $$('div[class="Select_value__1icIC"]')
+        const thanhpho = await $$(diachi[0])
         await setvaluedropdown(diachi[0],'Thành phố Hà Nội')
         await setvaluedropdown(diachi[1],'Quận Ba Đình')
         await setvaluedropdown(diachi[2],'Phường Phúc Xá')

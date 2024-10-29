@@ -2,7 +2,7 @@ import { browser, $, $$ } from "@wdio/globals";
 describe('login tests', () => {
     let username, password, login;
     before(async () => {
-        await browser.url('http://192.168.0.163:3232/auth/login');
+        await browser.url('https://tm-demo-ad.mobiplus.vn/auth/login');
         username = await $('input[name="username"]');
         password = await $('input[name="password"]');
         login = await $('button[class="Button_container__By3IT"]');
@@ -14,10 +14,10 @@ describe('login tests', () => {
 
     it('truecreate', async () => {
         // Lặp lại 20 lần
-        // for (let i = 0; i < 20; i++) {
-        await browser.url('http://192.168.0.163:3232/project');
+        // for (let i = 0; i < 20; i++) 
+        await browser.url('https://tm-demo-ad.mobiplus.vn/project');
         await browser.pause(1000)
-        await browser.url('http://192.168.0.163:3232/project/create');
+        await browser.url('https://tm-demo-ad.mobiplus.vn/project/create');
 
         await browser.pause(1000)
         //Tên chi nhánh
